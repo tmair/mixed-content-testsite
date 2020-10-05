@@ -42,9 +42,10 @@ function init() {
     }
 
     var button = document.getElementById('button');
+    var httpOutput = document.getElementById('httpOutput');
 
     button.addEventListener('click', () => {
-        fetch('http://localhost:8081/').then(r => r.text()).then((t) => console.log(t));
+        fetch('http://localhost:8081/').then(r => r.text()).then((t) => httpOutput.innerHTML += `<p>${t}</p>`);
     });
   }
   
