@@ -40,6 +40,12 @@ function init() {
   
       websocket.send(message);
     }
+
+    var button = document.getElementById('button');
+
+    button.addEventListener('click', () => {
+        fetch('http://localhost:8081/').then(r => r.text()).then((t) => console.log(t));
+    });
   }
   
   init();
